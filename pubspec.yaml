@@ -37,6 +37,7 @@ dependencies:
 
   # Responsive
   flutter_screenutil: ^5.5.4
+  dio: ^4.0.6
 
 dev_dependencies:
   flutter_test:
