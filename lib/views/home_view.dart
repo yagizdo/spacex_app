@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spacex_app/bloc/launches_bloc.dart';
+import 'package:spacex_app/utils/app_colors.dart';
 import 'package:spacex_app/utils/app_textstyles.dart';
 import 'package:spacex_app/widgets/main_widgets/main_layout.dart';
 
@@ -24,6 +26,14 @@ class _HomeViewState extends State<HomeView> {
       content: Center(
         child: BlocBuilder<LaunchesBloc, LaunchesState>(
           builder: (context, state) {
+            if (state is LoadingState) {
+              return Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                  strokeWidth: 5.w,
+                ),
+              );
+            }
             if (state is GetLaunchesState) {
               return ListView.builder(
                 itemCount: state.launches.length,

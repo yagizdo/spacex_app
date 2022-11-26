@@ -14,9 +14,9 @@ class LaunchesBloc extends Bloc<LaunchesEvent, LaunchesState> {
 
     on<LaunchesFetch>((event, emit) async {
       LaunchesRepository _repository = LaunchesRepository();
-
+      emit(LoadingState(true));
       List<DataModel> launches = await _repository.getAllData();
-
+      emit(LoadingState(false));
       emit(GetLaunchesState(launches: launches));
     });
   }

@@ -10,3 +10,9 @@ class GetLaunchesState extends LaunchesState {
 
   GetLaunchesState({required this.launches});
 }
+
+class LoadingState extends LaunchesState {
+  final bool isLoading;
+
+  LoadingState(this.isLoading);
+}
