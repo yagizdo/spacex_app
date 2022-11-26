@@ -1,16 +1,46 @@
-# spacex_app
+# Flutter - SpaceX Launches
 
-A new Flutter project.
+## Run Locally
 
-## Getting Started
+Clone the project
 
-This project is a starting point for a Flutter application.
+```bash
+  git clone https://github.com/yagizdo/spacex_app
+```
 
-A few resources to get you started if this is your first Flutter project:
+Go to the project directory
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+  cd spacex_app
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Install dependencies
+
+```bash
+  flutter pub get
+```
+
+Run App
+
+```bash
+  flutter run
+```
+
+
+##  Libraries I use in the application:
+- Dio : https://pub.dev/packages/dio
+- Flutter Bloc : https://pub.dev/packages/flutter_bloc
+- Bloc : https://pub.dev/packages/bloc
+- Meta : https://pub.dev/packages/meta
+- Flutter Screen Util : https://pub.dev/packages/flutter_screenutil
+- Pull to Refresh : https://pub.dev/packages/pull_to_refresh
+
+
+## App Video
+Soon..
+
+
+
+## Contributing
+
+Contributions are always welcome!
