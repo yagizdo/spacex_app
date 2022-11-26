@@ -1,3 +1,8 @@
+import 'cores.dart';
+import 'failures.dart';
+import 'fairings.dart';
+import 'links.dart';
+
 class LaunchesModel {
   Fairings? fairings;
   Links? links;
@@ -119,135 +124,6 @@ class LaunchesModel {
     data['auto_update'] = this.autoUpdate;
     data['tbd'] = this.tbd;
     data['id'] = this.id;
-    return data;
-  }
-}
-
-class Fairings {
-  bool? reused;
-  bool? recoveryAttempt;
-  bool? recovered;
-
-  Fairings({this.reused, this.recoveryAttempt, this.recovered});
-
-  Fairings.fromJson(Map<String, dynamic> json) {
-    reused = json['reused'];
-    recoveryAttempt = json['recovery_attempt'];
-    recovered = json['recovered'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['reused'] = this.reused;
-    data['recovery_attempt'] = this.recoveryAttempt;
-    data['recovered'] = this.recovered;
-    return data;
-  }
-}
-
-class Links {
-  Patch? patch;
-  String? webcast;
-  String? youtubeId;
-  String? article;
-  String? wikipedia;
-
-  Links(
-      {this.patch, this.webcast, this.youtubeId, this.article, this.wikipedia});
-
-  Links.fromJson(Map<String, dynamic> json) {
-    patch = json['patch'] != null ? new Patch.fromJson(json['patch']) : null;
-    webcast = json['webcast'];
-    youtubeId = json['youtube_id'];
-    article = json['article'];
-    wikipedia = json['wikipedia'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.patch != null) {
-      data['patch'] = this.patch!.toJson();
-    }
-    data['webcast'] = this.webcast;
-    data['youtube_id'] = this.youtubeId;
-    data['article'] = this.article;
-    data['wikipedia'] = this.wikipedia;
-    return data;
-  }
-}
-
-class Patch {
-  String? small;
-  String? large;
-
-  Patch({this.small, this.large});
-
-  Patch.fromJson(Map<String, dynamic> json) {
-    small = json['small'];
-    large = json['large'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['small'] = this.small;
-    data['large'] = this.large;
-    return data;
-  }
-}
-
-class Failures {
-  int? time;
-  String? reason;
-
-  Failures({this.time, this.reason});
-
-  Failures.fromJson(Map<String, dynamic> json) {
-    time = json['time'];
-    reason = json['reason'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['time'] = this.time;
-    data['reason'] = this.reason;
-    return data;
-  }
-}
-
-class Cores {
-  String? core;
-  int? flight;
-  bool? gridfins;
-  bool? legs;
-  bool? reused;
-  bool? landingAttempt;
-
-  Cores({
-    this.core,
-    this.flight,
-    this.gridfins,
-    this.legs,
-    this.reused,
-    this.landingAttempt,
-  });
-
-  Cores.fromJson(Map<String, dynamic> json) {
-    core = json['core'];
-    flight = json['flight'];
-    gridfins = json['gridfins'];
-    legs = json['legs'];
-    reused = json['reused'];
-    landingAttempt = json['landing_attempt'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['core'] = this.core;
-    data['flight'] = this.flight;
-    data['gridfins'] = this.gridfins;
-    data['legs'] = this.legs;
-    data['reused'] = this.reused;
-    data['landing_attempt'] = this.landingAttempt;
     return data;
   }
 }
