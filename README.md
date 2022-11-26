@@ -37,7 +37,8 @@ Run App
 
 
 ## App Video
-Soon..
+
+https://user-images.githubusercontent.com/31064552/204089576-e3ddfabc-33a9-4452-bd9d-789310f5da0b.mp4
 
 
 
