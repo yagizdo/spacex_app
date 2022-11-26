@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:spacex_app/bloc/launches_bloc.dart';
 import 'package:spacex_app/widgets/main_widgets/main_layout.dart';
 
@@ -14,10 +15,18 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  late final RefreshController _refreshController;
+
+  void _onRefresh() async {
+    BlocProvider.of<LaunchesBloc>(context).add(LaunchesFetch());
+    _refreshController.refreshCompleted();
+  }
+
   @override
   void initState() {
     super.initState();
     BlocProvider.of<LaunchesBloc>(context).add(LaunchesFetch());
+    _refreshController = RefreshController(initialRefresh: false);
   }
 
   @override
@@ -57,16 +66,23 @@ class _HomeViewState extends State<HomeView> {
             );
           }
           if (state is GetLaunchesState) {
-            return ListView.builder(
-              itemCount: state.launches.length,
-              itemBuilder: (context, index) {
-                var launch = state.launches[index];
+            return SmartRefresher(
+              enablePullDown: true,
+              enablePullUp: false,
+              header: const WaterDropHeader(),
+              controller: _refreshController,
+              onRefresh: _onRefresh,
+              child: ListView.builder(
+                itemCount: state.launches.length,
+                itemBuilder: (context, index) {
+                  var launch = state.launches[index];
 
-                return Text(
-                  launch.name ?? 'No name data',
-                  style: AppTextStyle.homeText(),
-                );
-              },
+                  return Text(
+                    launch.name ?? 'No name data',
+                    style: AppTextStyle.homeText(),
+                  );
+                },
+              ),
             );
           }
           return Text(

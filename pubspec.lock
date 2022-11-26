@@ -158,6 +158,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.4"
+  pull_to_refresh:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "01147933180d1ad5e6a3b6f57a2e91be0c11d2b0"
+      url: "https://github.com/ymback/flutter_pulltorefresh"
+    source: git
+    version: "2.0.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -221,4 +230,4 @@ packages:
     version: "2.1.2"
 sdks:
   dart: ">=2.17.6 <3.0.0"
-  flutter: ">=1.16.0"
+  flutter: ">=2.0.0"

@@ -46,6 +46,10 @@ dependencies:
   flutter_bloc: ^8.1.1
   meta: ^1.7.0
 
+  # UI
+  pull_to_refresh:
+    git : https://github.com/ymback/flutter_pulltorefresh
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
