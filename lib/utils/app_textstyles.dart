@@ -48,7 +48,7 @@ class AppTextStyle {
   static TextStyle launchesDetail() {
     return TextStyle(
       color: AppColors.white,
-      fontSize: 14.sp,
+      fontSize: 12.5.sp,
       fontWeight: FontWeight.w500,
       letterSpacing: -0.2.sp,
       overflow: TextOverflow.ellipsis,

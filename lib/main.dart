@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 667),
+      designSize: const Size(393, 852),
       builder: (context, child) => const MaterialApp(
         title: 'SpaceX App',
         home: HomeView(),
