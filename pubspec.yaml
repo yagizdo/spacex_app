@@ -37,7 +37,14 @@ dependencies:
 
   # Responsive
   flutter_screenutil: ^5.5.4
+
+  # HTTP Requests
   dio: ^4.0.6
+
+  # Bloc
+  bloc: ^8.1.0
+  flutter_bloc: ^8.1.1
+  meta: ^1.7.0
 
 dev_dependencies:
   flutter_test:
