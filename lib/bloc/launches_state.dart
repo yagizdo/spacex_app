@@ -6,7 +6,7 @@ abstract class LaunchesState {}
 class LaunchesInitial extends LaunchesState {}
 
 class GetLaunchesState extends LaunchesState {
-  final List<DataModel> launches;
+  final List<LaunchesModel> launches;
 
   GetLaunchesState({required this.launches});
 }

@@ -1,5 +1,5 @@
-import 'package:spacex_app/models/data_model.dart';
+import 'package:spacex_app/models/launches_model.dart';
 
 abstract class LaunchesRepositoryInterface {
-  Future<List<DataModel>> getAllData();
+  Future<List<LaunchesModel>> getAllData();
 }

@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:spacex_app/models/data_model.dart';
+import 'package:spacex_app/models/launches_model.dart';
 import 'package:spacex_app/repositories/launches_repository.dart';
 
 part 'launches_event.dart';
@@ -15,7 +15,7 @@ class LaunchesBloc extends Bloc<LaunchesEvent, LaunchesState> {
     on<LaunchesFetch>((event, emit) async {
       LaunchesRepository _repository = LaunchesRepository();
       emit(LoadingState(true));
-      List<DataModel> launches = await _repository.getAllData();
+      List<LaunchesModel> launches = await _repository.getAllData();
       emit(LoadingState(false));
       emit(GetLaunchesState(launches: launches));
     });

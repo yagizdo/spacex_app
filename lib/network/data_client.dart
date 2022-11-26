@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:spacex_app/models/data_model.dart';
+import 'package:spacex_app/models/launches_model.dart';
 
 class DataClient {
   // Base Url
@@ -9,9 +9,9 @@ class DataClient {
   Dio dio = Dio();
 
   // Get data from API
-  Future<List<DataModel>> getData() async {
+  Future<List<LaunchesModel>> getData() async {
     // Data List
-    List<DataModel> dataList = [];
+    List<LaunchesModel> dataList = [];
 
     // Get data
     Response response = await dio.get('$baseUrl/v4/launches/');
@@ -20,7 +20,9 @@ class DataClient {
     var parsedList = response.data;
 
     // Parsed list to mapped and add to data list
-    dataList = parsedList.map<DataModel>((e) => DataModel.fromJson(e)).toList();
+    dataList = parsedList
+        .map<LaunchesModel>((e) => LaunchesModel.fromJson(e))
+        .toList();
 
     // Return data list
     return dataList;

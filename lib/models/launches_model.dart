@@ -1,4 +1,4 @@
-class DataModel {
+class LaunchesModel {
   Fairings? fairings;
   Links? links;
   String? staticFireDateUtc;
@@ -23,7 +23,7 @@ class DataModel {
   bool? tbd;
   String? id;
 
-  DataModel(
+  LaunchesModel(
       {this.fairings,
       this.links,
       this.staticFireDateUtc,
@@ -48,7 +48,7 @@ class DataModel {
       this.tbd,
       this.id});
 
-  DataModel.fromJson(Map<String, dynamic> json) {
+  LaunchesModel.fromJson(Map<String, dynamic> json) {
     fairings = json['fairings'] != null
         ? new Fairings.fromJson(json['fairings'])
         : null;

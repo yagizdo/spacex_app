@@ -1,12 +1,12 @@
-import 'package:spacex_app/models/data_model.dart';
+import 'package:spacex_app/models/launches_model.dart';
 import 'package:spacex_app/network/data_client.dart';
 import 'package:spacex_app/repositories/launches_repository_interface.dart';
 
 class LaunchesRepository extends LaunchesRepositoryInterface {
   @override
-  Future<List<DataModel>> getAllData() async {
+  Future<List<LaunchesModel>> getAllData() async {
     // Data List
-    List<DataModel> dataResponseList = [];
+    List<LaunchesModel> dataResponseList = [];
 
     // Data Client Instance
     DataClient _client = DataClient();
