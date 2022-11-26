@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spacex_app/models/launches_model.dart';
 import 'package:spacex_app/utils/app_assets.dart';
+import 'package:spacex_app/utils/app_colors.dart';
 import 'package:spacex_app/utils/app_constants.dart';
 
 import '../../utils/app_textstyles.dart';
@@ -13,18 +14,19 @@ class LaunchesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.w),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.w),
       child: Container(
+        alignment: Alignment.center,
         width: 1.sw,
         height: 250.w,
         decoration: BoxDecoration(
-          color: CupertinoColors.systemTeal,
+          color: AppColors.blackBackground,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: (launch.details?.length ?? 0) < 100 ? 10.w : 20.w),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               height5Per(context: context),
               Image.network(

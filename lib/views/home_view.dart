@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:spacex_app/utils/app_colors.dart';
 import 'package:spacex_app/widgets/home/launches_content.dart';
 
 import '../utils/app_textstyles.dart';
@@ -12,6 +13,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainLayout(
+      backgroundColor: AppColors.white,
       content: NestedScrollView(
         headerSliverBuilder: (context, innerBoxScrolled) {
           return [
@@ -20,7 +22,7 @@ class HomeView extends StatelessWidget {
                 'SpaceX Launches',
                 style: AppTextStyle.homeAppbarTitle(),
               ),
-              backgroundColor: CupertinoColors.systemTeal,
+              backgroundColor: AppColors.blackBackground,
               elevation: 0,
               centerTitle: true,
               expandedHeight: 150.w,

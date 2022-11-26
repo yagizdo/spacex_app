@@ -35,7 +35,7 @@ class AppTextStyle {
 
   static TextStyle homeAppbarTitle() {
     return TextStyle(
-      color: AppColors.blackBackground,
+      color: AppColors.white,
       fontSize: 22.sp,
       fontWeight: FontWeight.w700,
       letterSpacing: -0.2.sp,
@@ -56,7 +56,7 @@ class AppTextStyle {
   static TextStyle launchesDetail() {
     return TextStyle(
       color: AppColors.white,
-      fontSize: 15.sp,
+      fontSize: 14.sp,
       fontWeight: FontWeight.w500,
       letterSpacing: -0.2.sp,
       overflow: TextOverflow.ellipsis,
