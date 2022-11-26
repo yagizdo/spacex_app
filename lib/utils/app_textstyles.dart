@@ -25,6 +25,16 @@ class AppTextStyle {
     );
   }
 
+  static TextStyle launchesViewTitle() {
+    return TextStyle(
+      color: AppColors.white,
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w700,
+      letterSpacing: -0.2.sp,
+      overflow: TextOverflow.ellipsis,
+    );
+  }
+
   static TextStyle launchesTitle() {
     return TextStyle(
       color: AppColors.white,
