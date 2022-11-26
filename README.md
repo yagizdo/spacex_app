@@ -36,6 +36,16 @@ Run App
 - Pull to Refresh : https://pub.dev/packages/pull_to_refresh
 
 
+## Directory layout
+- [`lib/bloc`](lib/bloc): Contains all blocs
+- [`lib/models`](lib/models): Contains all models 
+- [`lib/network`](lib/network): Contains all network related files
+- [`lib/repositories`](lib/repositories): Contains all repositories 
+- [`lib/utils`](lib/utils): assets (image, audio files, ...), colors, text styles and constants used by the application
+- [`lib/widgets`](lib/views): Contains all views
+- [`lib/widgets`](lib/widgets): project's widgets
+
+
 ## App Video
 
 https://user-images.githubusercontent.com/31064552/204089576-e3ddfabc-33a9-4452-bd9d-789310f5da0b.mp4
