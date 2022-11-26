@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spacex_app/views/home_view.dart';
 
+import 'bloc/launches_bloc.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(BlocProvider(
+    create: (context) => LaunchesBloc(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
