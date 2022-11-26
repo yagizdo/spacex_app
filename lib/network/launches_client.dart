@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:spacex_app/models/launches_model.dart';
 
-class DataClient {
+class LaunchesClient {
   // Base Url
   final String baseUrl = 'https://api.spacexdata.com';
 
@@ -9,7 +9,7 @@ class DataClient {
   Dio dio = Dio();
 
   // Get data from API
-  Future<List<LaunchesModel>> getData() async {
+  Future<List<LaunchesModel>> getLaunchesData() async {
     // Data List
     List<LaunchesModel> dataList = [];
 

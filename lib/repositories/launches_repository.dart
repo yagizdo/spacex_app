@@ -1,5 +1,5 @@
 import 'package:spacex_app/models/launches_model.dart';
-import 'package:spacex_app/network/data_client.dart';
+import 'package:spacex_app/network/launches_client.dart';
 import 'package:spacex_app/repositories/launches_repository_interface.dart';
 
 class LaunchesRepository extends LaunchesRepositoryInterface {
@@ -9,10 +9,10 @@ class LaunchesRepository extends LaunchesRepositoryInterface {
     List<LaunchesModel> dataResponseList = [];
 
     // Data Client Instance
-    DataClient _client = DataClient();
+    LaunchesClient launchesClient = LaunchesClient();
 
     // Get Data
-    dataResponseList = await _client.getData();
+    dataResponseList = await launchesClient.getLaunchesData();
 
     // return data list
     return dataResponseList;
