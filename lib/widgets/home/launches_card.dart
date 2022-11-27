@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,9 +27,17 @@ class LaunchesCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.network(
-                launch.links?.patch?.small ?? AppAssets.noIconImg,
-                scale: 2.5.w,
+              CachedNetworkImage(
+                imageUrl: launch.links?.patch?.small ?? AppAssets.noIconImg,
+                height: 100.w,
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                    Center(
+                  child: CircularProgressIndicator(
+                    value: downloadProgress.progress,
+                    color: AppColors.white,
+                    strokeWidth: 2.w,
+                  ),
+                ),
               ),
               SizedBox(height: 18.w),
               Text(launch.name ?? 'No name data',
