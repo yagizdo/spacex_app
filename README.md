@@ -34,6 +34,7 @@ Run App
 - Meta : https://pub.dev/packages/meta
 - Flutter Screen Util : https://pub.dev/packages/flutter_screenutil
 - Pull to Refresh : https://pub.dev/packages/pull_to_refresh
+- Cached Network Image : https://pub.dev/packages/cached_network_image
 
 
 ## Directory layout
@@ -48,8 +49,7 @@ Run App
 
 ## App Video
 
-https://user-images.githubusercontent.com/31064552/204089576-e3ddfabc-33a9-4452-bd9d-789310f5da0b.mp4
-
+https://user-images.githubusercontent.com/31064552/204133461-df2893a0-1f6b-416e-a382-0185bf342e8b.mp4
 
 
 ## Contributing
