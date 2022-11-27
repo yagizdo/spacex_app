@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:spacex_app/models/launches_model.dart';
@@ -16,10 +17,19 @@ class LaunchesBloc extends Bloc<LaunchesEvent, LaunchesState> {
     on<LaunchesFetch>((event, emit) async {
       LaunchesRepository _repository = LaunchesRepository();
       emit(LoadingState(true));
-      List<LaunchesModel> launches =
-          await _repository.getAllData(event.context);
-      emit(LoadingState(false));
-      emit(GetLaunchesState(launches: launches));
+      try {
+        List<LaunchesModel> launches = await _repository.getAllData();
+        emit(LoadingState(false));
+        emit(GetLaunchesState(launches: launches));
+      } on DioError catch (e) {
+        emit(LoadingState(false));
+
+        emit(ErrorState(e.message, e.response?.statusCode ?? 404));
+      } catch (e) {
+        emit(LoadingState(false));
+
+        emit(ErrorState(e.toString(), 404));
+      }
     });
 
     on<ErrorEvent>((event, emit) async {

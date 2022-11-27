@@ -29,14 +29,14 @@ class _LaunchesContentState extends State<LaunchesContent> {
     504: 'Gateway Timeout',
   };
   void _onRefresh() async {
-    BlocProvider.of<LaunchesBloc>(context).add(LaunchesFetch(context: context));
+    BlocProvider.of<LaunchesBloc>(context).add(LaunchesFetch());
     _refreshController.refreshCompleted();
   }
 
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<LaunchesBloc>(context).add(LaunchesFetch(context: context));
+    BlocProvider.of<LaunchesBloc>(context).add(LaunchesFetch());
     _refreshController = RefreshController(initialRefresh: false);
   }
 

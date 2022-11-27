@@ -3,11 +3,7 @@ part of 'launches_bloc.dart';
 @immutable
 abstract class LaunchesEvent {}
 
-class LaunchesFetch extends LaunchesEvent {
-  final BuildContext context;
-
-  LaunchesFetch({required this.context});
-}
+class LaunchesFetch extends LaunchesEvent {}
 
 class ErrorEvent extends LaunchesEvent {
   final int statusCode;
