@@ -49,6 +49,7 @@ dependencies:
   # UI
   pull_to_refresh:
     git : https://github.com/ymback/flutter_pulltorefresh
+  cached_network_image: ^3.2.1
 
 dev_dependencies:
   flutter_test:
