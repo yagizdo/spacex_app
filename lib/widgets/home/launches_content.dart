@@ -18,15 +18,25 @@ class LaunchesContent extends StatefulWidget {
 class _LaunchesContentState extends State<LaunchesContent> {
   late final RefreshController _refreshController;
 
+  var errorMap = {
+    400: 'Bad Request',
+    401: 'Unauthorized',
+    403: 'Forbidden',
+    404: 'Not Found',
+    500: 'Internal Server Error',
+    502: 'Bad Gateway',
+    503: 'Service Unavailable',
+    504: 'Gateway Timeout',
+  };
   void _onRefresh() async {
-    BlocProvider.of<LaunchesBloc>(context).add(LaunchesFetch());
+    BlocProvider.of<LaunchesBloc>(context).add(LaunchesFetch(context: context));
     _refreshController.refreshCompleted();
   }
 
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<LaunchesBloc>(context).add(LaunchesFetch());
+    BlocProvider.of<LaunchesBloc>(context).add(LaunchesFetch(context: context));
     _refreshController = RefreshController(initialRefresh: false);
   }
 
@@ -58,6 +68,16 @@ class _LaunchesContentState extends State<LaunchesContent> {
                     ),
                   );
                 }
+
+                if (state is ErrorState) {
+                  return Center(
+                    child: Text(
+                      ' ${state.statusCode} ${errorMap[state.statusCode] ?? 'Error'}',
+                      style: AppTextStyle.launchesViewTitle(),
+                    ),
+                  );
+                }
+
                 if (state is GetLaunchesState) {
                   return SmartRefresher(
                     enablePullDown: true,

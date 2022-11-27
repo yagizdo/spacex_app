@@ -16,3 +16,10 @@ class LoadingState extends LaunchesState {
 
   LoadingState(this.isLoading);
 }
+
+class ErrorState extends LaunchesState {
+  final String message;
+  final int statusCode;
+
+  ErrorState(this.message, this.statusCode);
+}
